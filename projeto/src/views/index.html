@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Integrantes</title>
-</head>
-<body>
-    <h1>Integrantes</h1>
-    <ul id="lista-integrantes"></ul>
-
-    <script>
-        // Função para fazer a requisição GET para a rota /integrantes
-        function carregarIntegrantes() {
-            fetch('http://localhost:3000/integrantes')
-                .then(response => response.json())
-                .then(data => {
-                    const listaIntegrantes = document.getElementById('lista-integrantes');
-                    data.integrantes.forEach(integrante => {
-                        const itemLista = document.createElement('li');
-                        itemLista.textContent = integrante.nome;
-                        listaIntegrantes.appendChild(itemLista);
-                    });
-                })
-                .catch(error => console.error('Erro ao carregar integrantes:', error));
+    <title>Bem-vindo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        // Chama a função para carregar os integrantes quando a página carrega
-        window.onload = carregarIntegrantes;
-    </script>
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à nossa aplicação DevOps!</h1>
+        <p>Esta é uma aplicação simples criada para demonstrar conceitos básicos de desenvolvimento e operações (DevOps).</p>
+        <p>Visite o nosso <a href="/integrantes">endpoint de integrantes</a> para conhecer os membros do nosso grupo.</p>
+    </div>
 </body>
 </html>
