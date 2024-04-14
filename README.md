@@ -13,7 +13,7 @@ Esta é uma simples aplicação Node.js com Express.js.
 3. Inicie o servidor:
     bash
    ```
-    node src/app.js
+    node projeto/src/app.js
    ```
 
 ## Endpoints
